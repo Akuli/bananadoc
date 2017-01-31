@@ -67,3 +67,4 @@ __all__ = [
     'parse_module',                 # misc functions
     'NoDocstring',                  # exceptions
 ]
+__version__ = '0.1'
