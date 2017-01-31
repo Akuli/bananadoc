@@ -56,7 +56,7 @@ def parsingfunc(parsingfunc):
 
     This is supposed to be used as a decorator. For example, like this:
 
-    ```py
+    ```python
     @parsingfunc
     def parse_string(parentsection, name, value):
         if not isinstance(value, str):
