@@ -7,22 +7,31 @@ After adding docstrings and `__all__` lists to everything public, using
 this program is really easy:
 
 ```
-$ tree my_project
-my_project
-├── __init__.py
-└── submodule.py
+$ cat hello.py
+"""Print Hello World!
 
-0 directories, 2 files
-$ bananadoc my_project
-Writing documentation to 'docs/reference'...
+This module contains [a function that prints hello world](#hello).
+"""
 
-2 modules were documented.
-$ tree docs/
-docs/
-└── reference/
-    ├── README.md
-    └── submodule.md
+def hello():
+    """Print *Hello World!*"""
+    print("Hello World!")
+$ python3 -m bananadoc hello
+Writing documentation...
+  hello.py -> docs/reference/README.md
 
-1 directory, 2 files
+1 module was documented.
+$ cat docs/reference/README.md
+# hello - print Hello World
+
+This module contains [a function that prints hello world](#hello).
+
+## hello()
+
+Print *Hello World!*
+
 $
 ```
+
+Of course, packages with multiple submodules are fully supported. Each
+submodule will be documented to a separate file.
